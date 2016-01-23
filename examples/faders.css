@@ -1,0 +1,45 @@
+.faderhoriz{
+  display:inline-block;
+  width:200px;
+  height:100px;
+  position:relative;
+  background:black;
+  margin:50px;
+}
+.groovehoriz{
+  width:160px;
+  height:10px;
+  position:absolute;
+  background:green;
+  top:45px;
+  left:20px;
+}
+.faderverti{
+  display:inline-block;
+  width:40px;
+  height:200px;
+  position:relative;
+  background:black;
+  margin:50px;
+
+}
+.grooveverti{
+  width:10px;
+  height:160px;
+  position:absolute;
+  background:green;
+  top:20px;
+  left:15px;
+}
+.caphoriz{
+  width:40px;
+  height:100px;
+  position:absolute;
+  background:red;
+}
+.capverti{
+  width:40px;
+  height:30px;
+  position:absolute;
+  background:red;
+}

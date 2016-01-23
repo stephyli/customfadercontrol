@@ -2,28 +2,28 @@
 <html>
 <head>
 <title>Page Title</title>
-
+<link rel="stylesheet" type="text/css" href="faders.css">
 </head>
 <body>
-<div vc-fader vc-id="fader/1" style ="display:inline-block;width:200px;height:100px;position:relative;background:black;margin:50px;">
+<div vc-fader class= "faderhoriz" vc-id="fader/1">
 
 
-<div vc-fader1groove style="width:160px;height:10px;position:absolute; background:green; top:45px; left:20px; "></div>
-  <div vc-fader-cap onmousedown="vcControl.faderCapDown(event)" style="width:40px;height:100px;position:absolute;background:red"></div>
+<div vc-fader1groove class="groovehoriz"></div>
+  <div vc-fader-cap class="caphoriz" onmousedown="vcControl.faderCapDown(event)"></div>
 
 
 </div>
-<div vc-fader vc-id="fader/2" style ="display:inline-block;width:40px;height:200px;position:relative;background:black;margin:50px;">
-<div vc-fader1groove style="width:10px;height:160px;position:absolute; background:green; top:20px; left:15px; "></div>
-  <div vc-fader-cap onmousedown="vcControl.faderCapDown(event)" style="width:40px;height:30px;position:absolute;background:red"></div>
+<div vc-fader class= "faderverti" vc-id="fader/2">
+<div vc-fader1groove class="grooveverti"></div>
+  <div vc-fader-cap class="capverti"onmousedown="vcControl.faderCapDown(event)"></div>
 </div>
-<div vc-fader vc-id="fader/3" style ="display:inline-block;width:40px;height:200px;position:relative;background:black;margin:50px;">
-<div vc-fader1groove style="width:10px;height:160px;position:absolute; background:green; top:20px; left:15px; "></div>
-  <div vc-fader-cap onmousedown="vcControl.faderCapDown(event)" style="width:40px;height:30px;position:absolute;background:red"></div>
+<div vc-fader  class= "faderverti" vc-id="fader/3">
+<div vc-fader1groove class="grooveverti"></div>
+  <div vc-fader-cap class="capverti"onmousedown="vcControl.faderCapDown(event)"></div>
 </div>
-<div vc-fader vc-id="fader/4" style ="display:inline-block;width:40px;height:200px;position:relative;background:black;margin:50px;">
-<div vc-fader1groove style="width:10px;height:160px;position:absolute; background:green; top:20px; left:15px; "></div>
-  <div vc-fader-cap onmousedown="vcControl.faderCapDown(event)" style="width:40px;height:30px;position:absolute;background:red"></div>
+<div vc-fader class= "faderverti" vc-id="fader/4">
+<div vc-fader1groove class="grooveverti"></div>
+  <div vc-fader-cap class="capverti"onmousedown="vcControl.faderCapDown(event)"></div>
 </div>
 
 <script src="../audiocontrols.js "></script>
