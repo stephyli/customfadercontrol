@@ -1,4 +1,4 @@
-.faderhoriz{
+.faderHoriz{
   display:inline-block;
   width:200px;
   height:100px;
@@ -6,7 +6,7 @@
   background:black;
   margin:50px;
 }
-.groovehoriz{
+.grooveHoriz{
   width:160px;
   height:10px;
   position:absolute;
@@ -14,7 +14,7 @@
   top:45px;
   left:20px;
 }
-.faderverti{
+.faderVert{
   display:inline-block;
   width:40px;
   height:200px;
@@ -23,7 +23,7 @@
   margin:50px;
 
 }
-.grooveverti{
+.grooveVert{
   width:10px;
   height:160px;
   position:absolute;
@@ -31,13 +31,13 @@
   top:20px;
   left:15px;
 }
-.caphoriz{
+.capHoriz{
   width:40px;
   height:100px;
   position:absolute;
   background:red;
 }
-.capverti{
+.capVert{
   width:40px;
   height:30px;
   position:absolute;
