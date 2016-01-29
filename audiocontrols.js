@@ -24,7 +24,7 @@ vcControl = function () {
     //positions of fadercap during movemove event
     var faderCapRect= faderCap.getBoundingClientRect();
    function faderCapMove(event){
-     //x,y coordinates for mousemove event
+//x,y coordinates for mousemove event
      var mouseMoveX=event.clientX;
      var mouseMoveY=event.clientY;
      //current change [endpoint(mousemove)-beginning(mousedown)]
