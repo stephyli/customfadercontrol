@@ -61,7 +61,7 @@ vcControl = function () {
     function faderCapUp(event){
       // detect that mouse is not down
       document.removeEventListener("mousemove", faderCapMove);
-      document.removeEventListener("mouseup", faderCapRelease);
+      document.removeEventListener("mouseup", faderCapUp);
     }
   }
   function addTargetActionForControlEvents(element, callback)
