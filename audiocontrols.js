@@ -164,3 +164,45 @@ vcController = function () {
   };
 }();
 */
+ function circleDown(event)
+  {
+    //pointer via onmousedown event
+    var circle = event.target;
+    document.addEventListener("mousemove", circleMove);
+    document.addEventListener("mouseup", circleUp);
+    //x,y coordinates for onmousedown event
+    var mouseDownX=event.clientX;
+    var mouseDownY=event.clientY;
+   function circleMove(event){
+   //x,y coordinates for mousemove event
+     var mouseMoveX=event.clientX;
+     var mouseMoveY=event.clientY; 
+ //current change [endpoint(mousemove)-beginning(mousedown)]
+     var changeX=mouseMoveX-mouseDownX;
+     var changeY=mouseMoveY-mouseDownY;   
+     //if mouse moves to the right, increase rotation to the right
+     if(mouseMoveX>mouseDownX){
+circle.style.WebkitTransform = "rotate ("+(changeX)+"deg)"; 
+}
+//if mouse moves to the left, decrease rotation to the left
+else if(mouseMoveX<mouseDownX){
+circle.style.WebkitTransform = "rotate ("+(changeX)+"deg)"; 
+}
+//if mouse moves down, decrease rotation to the left
+if (mouseMoveY>mouseDownY){
+circle.style.WebkitTransform = "rotate ("+(changeY)+"deg)"; 
+}
+//if mouse moves up, increase roration to the right
+else if (mouseMoveY<mouseDownY){
+circle.style.WebkitTransform = "rotate("+(changeY)+"deg)"; 
+}
+}
+     
+     
+ 
+    function circleUp(event){
+      // detect that mouse is not down
+      document.removeEventListener("mousemove",circleMove);
+      document.removeEventListener("mouseup", circleUp);
+    }
+  }
