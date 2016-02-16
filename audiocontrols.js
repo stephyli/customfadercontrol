@@ -167,12 +167,14 @@ vcController = function () {
  function circleDown(event)
   {
     //pointer via onmousedown event
-    var circle = event.target;
+    var circle = document.getElementById("circle");
     document.addEventListener("mousemove", circleMove);
     document.addEventListener("mouseup", circleUp);
     //x,y coordinates for onmousedown event
     var mouseDownX=event.clientX;
     var mouseDownY=event.clientY;
+    var circleRect= circle.getBoundingClientRect();
+    console.log(circleRect);
    function circleMove(event){
    //x,y coordinates for mousemove event
      var mouseMoveX=event.clientX;
@@ -181,20 +183,14 @@ vcController = function () {
      var changeX=mouseMoveX-mouseDownX;
      var changeY=mouseMoveY-mouseDownY;   
      //if mouse moves to the right, increase rotation to the right
-     if(mouseMoveX>mouseDownX){
-circle.style.WebkitTransform = "rotate ("+(changeX)+"deg)"; 
-}
-//if mouse moves to the left, decrease rotation to the left
-else if(mouseMoveX<mouseDownX){
-circle.style.WebkitTransform = "rotate ("+(changeX)+"deg)"; 
-}
+     
 //if mouse moves down, decrease rotation to the left
 if (mouseMoveY>mouseDownY){
 circle.style.WebkitTransform = "rotate ("+(changeY)+"deg)"; 
 }
-//if mouse moves up, increase roration to the right
+//if mouse moves up, increase rotation to the right
 else if (mouseMoveY<mouseDownY){
-circle.style.WebkitTransform = "rotate("+(changeY)+"deg)"; 
+circle.style.WebkitTransform = "rotate("+(-changeY)+"deg)"; 
 }
 }
      

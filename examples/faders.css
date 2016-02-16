@@ -5,7 +5,7 @@
     border-radius: 150px;
     height:200px;
     position:relative;
-    //-webkit-transform: rotate(80deg);
+    -webkit-transform: rotate(50deg);
 }
 .pointer{
   width:10px;
