@@ -171,17 +171,21 @@ vcController = function () {
     document.addEventListener("mousemove", circleMove);
     document.addEventListener("mouseup", circleUp);
     //x,y coordinates for onmousedown event
-    var mouseDownX=event.clientX;
-    var mouseDownY=event.clientY;
-    var circleRect= circle.getBoundingClientRect();
-    console.log(circleRect);
+    
+    var mouseDownY=event.clientY+50;
+    var circleContainerRect= circleContainer.getBoundingClientRect();
+    console.log(circleContainerRect);
+    var mouseDownYrect=mouseDownY-circleContainerRect.top;
+  
    function circleMove(event){
    //x,y coordinates for mousemove event
-     var mouseMoveX=event.clientX;
+     
      var mouseMoveY=event.clientY; 
+     var mouseMoveYrect=mouseMoveY-circleContainerRect.top;
+   
  //current change [endpoint(mousemove)-beginning(mousedown)]
-     var changeX=mouseMoveX-mouseDownX;
-     var changeY=mouseMoveY-mouseDownY;   
+    
+     var changeY=mouseMoveYrect-mouseDownYrect;      
      //if mouse moves to the right, increase rotation to the right
      
 //if mouse moves down, decrease rotation to the left

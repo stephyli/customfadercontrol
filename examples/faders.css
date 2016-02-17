@@ -1,10 +1,20 @@
+
+.circleContainer{
+  display:inline-block;
+   background:orange;
+    width: 200px;
+    height:200px;
+    position:relative;
+
+}
+
 .circle{
   display:inline-block;
    background:black;
     width: 200px;
     border-radius: 150px;
     height:200px;
-    position:relative;
+    position:absolute;
     -webkit-transform: rotate(50deg);
 }
 .pointer{
