@@ -172,7 +172,7 @@ vcController = function () {
     document.addEventListener("mouseup", circleUp);
     //x,y coordinates for onmousedown event
     
-    var mouseDownY=event.clientY+503;
+    var mouseDownY=event.clientY+50;
     var circleContainerRect= circleContainer.getBoundingClientRect();
     console.log(circleContainerRect);
     var mouseDownYrect=mouseDownY-circleContainerRect.top;
