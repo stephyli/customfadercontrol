@@ -164,45 +164,53 @@ vcController = function () {
   };
 }();
 */
- function circleDown(event)
-  {
-    //pointer via onmousedown event
-    var circle = document.getElementById("circle");
-    document.addEventListener("mousemove", circleMove);
-    document.addEventListener("mouseup", circleUp);
-    //x,y coordinates for onmousedown event
-    
-    var mouseDownY=event.clientY+50;
-    var circleContainerRect= circleContainer.getBoundingClientRect();
-    console.log(circleContainerRect);
-    var mouseDownYrect=mouseDownY-circleContainerRect.top;
+
+// Define our limits here and the current (starting) rotation
+var minRotation = 50;
+var maxRotation = 310;
+var currentRotation = 50;
+
   
-   function circleMove(event){
-   //x,y coordinates for mousemove event
-     
-     var mouseMoveY=event.clientY; 
-     var mouseMoveYrect=mouseMoveY-circleContainerRect.top;
-   
- //current change [endpoint(mousemove)-beginning(mousedown)]
-    
-     var changeY=mouseMoveYrect-mouseDownYrect;      
-     //if mouse moves to the right, increase rotation to the right
-     
-//if mouse moves down, decrease rotation to the left
-if (mouseMoveY>mouseDownY){
-circle.style.WebkitTransform = "rotate ("+(changeY)+"deg)"; 
+function circleDown(event)
+{
+	document.addEventListener("mousemove", circleMove);
+	document.addEventListener("mouseup", circleUp);
+	
+	var mouseDownY = event.clientY;
+	
+	// Variable that will store the rotation value for where the user is trying to rotate it to
+	var newRotation;
+	
+	function circleMove(event)
+	{
+		var mouseMoveY = event.clientY;
+		
+		// The change in y positions is the amount we want to rotate it in degrees. This can be positive or negative.
+		var changeY = mouseDownY - mouseMoveY;
+		
+		// The new rotation is the current rotation plus the desired change
+		newRotation = currentRotation + changeY;
+		
+		// If user attempts to rotate less than minRotation degrees, stop them and set to the minimum
+		if(newRotation < minRotation)
+		{
+			newRotation = minRotation;
+		}
+		// If user attempts to rotate more than maxRotation degrees, stop them and set to the maximum
+		else if(newRotation > maxRotation)
+		{
+			newRotation = maxRotation;
+		}
+		
+		circle.style.WebkitTransform = "rotate(" + newRotation + "deg)";
+	}
+	
+	function circleUp(event)
+	{
+		// Update the current rotation variable to to the new rotation so we can remember where we left off
+		currentRotation = newRotation;
+		document.removeEventListener("mousemove", circleMove);
+		document.removeEventListener("mouseup", circleUp);
+	}
 }
-//if mouse moves up, increase rotation to the right
-else if (mouseMoveY<mouseDownY){
-circle.style.WebkitTransform = "rotate("+(-changeY)+"deg)"; 
-}
-}
-     
-     
  
-    function circleUp(event){
-      // detect that mouse is not down
-      document.removeEventListener("mousemove",circleMove);
-      document.removeEventListener("mouseup", circleUp);
-    }
-  }
